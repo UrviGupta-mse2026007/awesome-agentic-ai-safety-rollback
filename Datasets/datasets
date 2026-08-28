@@ -1,0 +1,241 @@
+# Datasets and Benchmarks
+
+This document contains datasets and benchmarks relevant to **Safety and Rollback Mechanisms for Objective Misinterpretation in Agentic AI Systems**.
+
+These resources can be used to evaluate harmful behavior, objective misinterpretation, prompt injection, unsafe tool use, policy compliance, and other safety failures in autonomous AI agents.
+
+---
+
+## 1. Agent-SafetyBench
+
+**Type:** Agent Safety Evaluation Benchmark
+
+**Purpose:**
+Agent-SafetyBench is designed to systematically evaluate the safety of Large Language Model (LLM) agents. It provides diverse environments and covers multiple safety risk categories and failure modes.
+
+**Relevance to this project:**
+This benchmark is highly relevant for evaluating whether an agent follows its intended objective and behaves safely when interacting with different environments and tools.
+
+**Resources:**
+
+* Paper: https://arxiv.org/abs/2412.14470
+* GitHub: https://github.com/thu-coai/Agent-SafetyBench
+* Dataset: https://huggingface.co/datasets/thu-coai/Agent-SafetyBench
+
+The official repository provides the benchmark data, environments, evaluation code, and scoring components.
+
+---
+
+## 2. AgentHarm
+
+**Type:** Harmfulness Evaluation Benchmark for LLM Agents
+
+**Purpose:**
+AgentHarm evaluates the ability and propensity of LLM agents to complete harmful multi-step tasks.
+
+The benchmark contains malicious agent tasks across multiple harm categories and includes augmented versions of the tasks.
+
+**Relevance to this project:**
+AgentHarm is useful for evaluating whether an autonomous agent can be induced to perform harmful actions and whether safety mechanisms can prevent such behavior.
+
+**Resources:**
+
+* Paper: https://arxiv.org/abs/2410.09024
+* Dataset: https://huggingface.co/datasets/ai-safety-institute/AgentHarm
+* Evaluation implementation: https://github.com/UKGovernmentBEIS/inspect_evals/tree/main/src/inspect_evals/agentharm
+
+The benchmark's official dataset is distributed through Hugging Face and is designed for safety evaluation rather than general-purpose model training.
+
+---
+
+## 3. AgentDojo
+
+**Type:** Agent Safety and Prompt Injection Evaluation Environment
+
+**Purpose:**
+AgentDojo is a dynamic environment designed to evaluate attacks and defenses for LLM agents.
+
+It provides tasks involving tool use and external information, allowing researchers to study prompt injection attacks and defensive mechanisms.
+
+**Relevance to this project:**
+An agent can receive instructions from external sources that conflict with the user's original objective. AgentDojo can therefore be used to evaluate objective preservation, tool-use safety, and defensive mechanisms.
+
+**Resources:**
+
+* Paper: https://arxiv.org/abs/2406.13352
+* GitHub: https://github.com/ethz-spylab/agentdojo
+
+The repository provides benchmark suites, task environments, attack methods, and defense mechanisms.
+
+---
+
+## 4. ToolEmu
+
+**Type:** Tool-Use Safety Benchmark
+
+**Purpose:**
+ToolEmu is an LM-based emulation framework for identifying risks associated with language-model agents that use external tools.
+
+The benchmark contains curated test cases and toolkits for evaluating agent trajectories.
+
+**Relevance to this project:**
+ToolEmu is particularly relevant because objective misinterpretation can become more dangerous when an agent has access to tools capable of modifying external systems.
+
+It can help evaluate:
+
+* Unsafe tool calls
+* Incorrect actions
+* Potential side effects
+* Tool-use risks
+* Agent trajectories
+
+**Resources:**
+
+* Paper: https://arxiv.org/abs/2309.15817
+* GitHub: https://github.com/ryoungj/ToolEmu
+
+The official repository describes a curated benchmark containing **144 test cases and 36 toolkits**.
+
+---
+
+## 5. τ-Bench
+
+**Type:** Tool-Agent-User Interaction Benchmark
+
+**Purpose:**
+τ-Bench evaluates interactions between users, AI agents, and domain-specific tools in realistic environments.
+
+The benchmark provides:
+
+* User simulations
+* Agent policies
+* Domain-specific tools
+* Evaluation tasks
+* Historical trajectories
+
+**Relevance to this project:**
+The benchmark is useful for studying whether agents correctly interpret user instructions while following domain policies and using external tools.
+
+This makes it relevant to objective interpretation, policy compliance, and safe autonomous execution.
+
+**Resources:**
+
+* Paper: https://arxiv.org/abs/2406.12045
+* GitHub: https://github.com/sierra-research/tau-bench
+
+The repository provides historical trajectories for some benchmark environments and supports multiple real-world domains.
+
+---
+
+## 6. InjecAgent
+
+**Type:** Indirect Prompt Injection Benchmark
+
+**Purpose:**
+InjecAgent evaluates indirect prompt injection attacks against tool-integrated LLM agents.
+
+The benchmark contains tasks designed to test whether external malicious instructions can cause an agent to perform actions that conflict with its intended task.
+
+**Relevance to this project:**
+This is directly related to objective misinterpretation because an agent may encounter instructions from external content and incorrectly prioritize them over the original user objective.
+
+**Resources:**
+
+* Paper: https://arxiv.org/abs/2403.02691
+* GitHub: https://github.com/uiuc-kang-lab/InjecAgent
+
+The benchmark contains separate test cases for different indirect prompt injection scenarios.
+
+---
+
+# Dataset Comparison
+
+| Dataset / Benchmark | Main Focus                    | Relevance |
+| ------------------- | ----------------------------- | --------- |
+| Agent-SafetyBench   | General agent safety          | ⭐⭐⭐⭐⭐     |
+| AgentHarm           | Harmful agent behavior        | ⭐⭐⭐⭐⭐     |
+| AgentDojo           | Prompt injection and defenses | ⭐⭐⭐⭐⭐     |
+| ToolEmu             | Tool-use safety               | ⭐⭐⭐⭐⭐     |
+| τ-Bench             | Tool-agent-user interaction   | ⭐⭐⭐⭐      |
+| InjecAgent          | Indirect prompt injection     | ⭐⭐⭐⭐⭐     |
+
+---
+
+# How These Datasets Support This Research
+
+The datasets and benchmarks above can be used at different stages of an agent safety pipeline.
+
+### Objective Validation
+
+Agent tasks can be evaluated to determine whether the agent correctly interprets the user's intended objective.
+
+### Runtime Monitoring
+
+Agent trajectories can be monitored to identify unsafe actions, unexpected tool calls, or deviations from the intended task.
+
+### Safety Evaluation
+
+Benchmarks such as Agent-SafetyBench and AgentHarm can be used to evaluate the overall safety of an agent.
+
+### Tool-Use Safety
+
+ToolEmu, AgentDojo, and τ-Bench provide environments for evaluating agents that interact with external tools.
+
+### Prompt Injection Defense
+
+AgentDojo and InjecAgent can be used to evaluate whether an agent can resist malicious instructions originating from external data.
+
+### Rollback Research
+
+These benchmarks can also be extended with checkpoint and rollback mechanisms.
+
+For example:
+
+```text
+Agent receives objective
+        ↓
+Agent creates plan
+        ↓
+Safety validation
+        ↓
+Checkpoint
+        ↓
+Tool execution
+        ↓
+Runtime monitoring
+        ↓
+Unsafe behavior detected?
+      ↙       ↘
+    YES        NO
+     ↓          ↓
+  Rollback    Continue
+     ↓
+Safe state restored
+```
+
+This allows researchers to evaluate not only whether an agent makes an unsafe decision, but also whether the system can **detect the failure, interrupt execution, and recover to a previously verified safe state**.
+
+---
+
+# Recommended Datasets for This Project
+
+For the specific topic **Safety and Rollback Mechanisms for Objective Misinterpretation in Agentic AI Systems**, the most relevant resources are:
+
+1. **Agent-SafetyBench** — general agent safety evaluation
+2. **AgentHarm** — harmful multi-step agent behavior
+3. **AgentDojo** — prompt injection and defensive mechanisms
+4. **ToolEmu** — tool-use safety
+5. **InjecAgent** — indirect prompt injection
+6. **τ-Bench** — tool-agent-user interaction
+
+These resources collectively cover the major evaluation requirements for studying objective misinterpretation, unsafe tool use, external instruction attacks, harmful behavior, and agent safety.
+
+---
+
+# Important Note
+
+These datasets and benchmarks are listed as **external research resources**. They do not need to be copied into this repository.
+
+The repository should provide links to the original dataset, benchmark, paper, or official implementation.
+
+Before using any dataset in experiments, check its official license and usage restrictions.
