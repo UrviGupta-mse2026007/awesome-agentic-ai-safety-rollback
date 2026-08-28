@@ -1,0 +1,332 @@
+# Research References
+
+This file contains research papers and academic resources relevant to **Safety and Rollback Mechanisms for Objective Misinterpretation in Agentic AI Systems**.
+
+---
+
+## 1. Concrete Problems in AI Safety
+
+**Authors:** Dario Amodei, Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman, Dan Mané
+
+**Year:** 2016
+
+**Relevance:**
+Identifies concrete AI safety problems including avoiding negative side effects, safe exploration, scalable supervision, and robustness to distributional changes.
+
+**Paper:**
+https://arxiv.org/abs/1606.06565
+
+---
+
+## 2. Cooperative Inverse Reinforcement Learning
+
+**Authors:** Dylan Hadfield-Menell, Anca Dragan, Pieter Abbeel, Stuart Russell
+
+**Year:** 2016
+
+**Relevance:**
+Studies how an AI system can learn human preferences instead of assuming that the objective is completely specified in advance.
+
+**Paper:**
+https://arxiv.org/abs/1606.03137
+
+---
+
+## 3. The Off-Switch Game
+
+**Authors:** Dylan Hadfield-Menell, Anca Dragan, Pieter Abbeel, Stuart Russell
+
+**Year:** 2017
+
+**Relevance:**
+Provides a formal framework for understanding why an AI system should allow humans to interrupt or shut it down. This is directly relevant to safe interruption and rollback mechanisms.
+
+**Paper:**
+https://arxiv.org/abs/1611.08219
+
+---
+
+## 4. Risks from Learned Optimization in Advanced Machine Learning Systems
+
+**Authors:** Evan Hubinger, Chris van Merwijk, Vladimir Mikulik, Joar Skalse, Scott Garrabrant
+
+**Year:** 2019
+
+**Relevance:**
+Examines learned optimization and the possibility that an AI system may develop an internal optimization process whose objective differs from the intended training objective.
+
+**Paper:**
+https://arxiv.org/abs/1906.01820
+
+---
+
+## 5. AI Safety Gridworlds
+
+**Authors:** Victoria Krakovna et al.
+
+**Year:** 2020
+
+**Relevance:**
+Introduces environments for studying AI safety problems such as reward hacking, side effects, safe exploration, and specification-related failures.
+
+**Paper:**
+https://arxiv.org/abs/1711.09883
+
+---
+
+## 6. Goal Misgeneralization in Deep Reinforcement Learning
+
+**Authors:** Lauro Langosco Di Langosco, Jack Koch, Lee D. Sharkey, Jacob Pfau, David Krueger
+
+**Year:** 2022
+
+**Venue:** ICML 2022
+
+**Relevance:**
+Studies cases where an agent retains its capabilities but pursues the wrong goal when deployed outside its training distribution. This is one of the most directly relevant papers to objective misinterpretation.
+
+**Paper:**
+https://proceedings.mlr.press/v162/langosco22a.html
+
+---
+
+## 7. Discovering Generalizable Spatial Goal Representations via Graph-based Active Reward Learning
+
+**Authors:** Aviv Netanyahu, Tianmin Shu, Joshua Tenenbaum, Pulkit Agrawal
+
+**Year:** 2022
+
+**Venue:** ICML 2022
+
+**Relevance:**
+Studies how agents can infer and learn goal representations that generalize to unseen environments, which is relevant to reliable objective interpretation.
+
+**Paper:**
+https://proceedings.mlr.press/v162/netanyahu22a.html
+
+---
+
+## 8. Learning Dynamics and Generalization in Deep Reinforcement Learning
+
+**Authors:** Clare Lyle, Mark Rowland, Will Dabney, Marta Kwiatkowska, Yarin Gal
+
+**Year:** 2022
+
+**Venue:** ICML 2022
+
+**Relevance:**
+Investigates generalization problems in deep reinforcement learning and how learned policies behave in new environments.
+
+**Paper:**
+https://proceedings.mlr.press/v162/lyle22a.html
+
+---
+
+## 9. ToolEmu: Identifying the Risks of LLM Agent Tool Use
+
+**Year:** 2023
+
+**Relevance:**
+Investigates safety risks that arise when language-model agents interact with external tools. Tool misuse is particularly important when an agent has misunderstood its objective.
+
+**Paper:**
+https://arxiv.org/abs/2309.15817
+
+---
+
+## 10. Red Teaming Language Models with Language Models
+
+**Year:** 2022
+
+**Relevance:**
+Investigates automated red-teaming approaches for discovering undesirable model behaviors. Similar approaches can be applied to autonomous agents before deployment.
+
+**Paper:**
+https://arxiv.org/abs/2210.14928
+
+---
+
+## 11. InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents
+
+**Authors:** Qiusi Zhan, Zhixiang Liang, Zifan Ying, Daniel Kang
+
+**Year:** 2024
+
+**Relevance:**
+Studies indirect prompt injection attacks against tool-using agents. External instructions can cause an agent to deviate from the user's original objective and perform harmful actions.
+
+**Paper:**
+https://arxiv.org/abs/2403.02691
+
+---
+
+## 12. Agent-SafetyBench: Evaluating the Safety of LLM Agents
+
+**Authors:** Zhexin Zhang, Shiyao Cui, Yida Lu, Jingzhuo Zhou, Hongning Wang, Minlie Huang et al.
+
+**Year:** 2024
+
+**Relevance:**
+Introduces a benchmark for evaluating safety in LLM agents across interactive environments and tool-use scenarios. It covers multiple safety risks and common agent failure modes.
+
+**Paper:**
+https://arxiv.org/abs/2412.14470
+
+**Implementation:**
+https://github.com/thu-coai/Agent-SafetyBench
+
+---
+
+## 13. AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents
+
+**Authors:** Maksym Andriushchenko et al.
+
+**Year:** 2024
+
+**Venue:** ICLR 2025
+
+**Relevance:**
+Introduces a benchmark for evaluating harmful behavior in LLM agents capable of executing multi-step tasks and interacting with external tools.
+
+**Paper:**
+https://arxiv.org/abs/2410.09024
+
+**Dataset:**
+https://huggingface.co/datasets/ai-safety-institute/AgentHarm
+
+---
+
+## 14. Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training
+
+**Authors:** Evan Hubinger et al.
+
+**Year:** 2024
+
+**Relevance:**
+Studies deceptive behaviors and backdoors that can persist despite safety training. This demonstrates why safety mechanisms should include behavioral monitoring rather than relying solely on training.
+
+**Paper:**
+https://arxiv.org/abs/2401.05566
+
+---
+
+## 15. InjecAgent: GitHub Implementation
+
+**Authors:** Qiusi Zhan et al.
+
+**Year:** 2024
+
+**Relevance:**
+Provides an implementation and benchmark for studying indirect prompt injection vulnerabilities in tool-integrated LLM agents.
+
+**GitHub:**
+https://github.com/uiuc-kang-lab/InjecAgent
+
+**Paper:**
+https://arxiv.org/abs/2403.02691
+
+---
+
+## 16. AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents
+
+**Year:** 2024
+
+**Relevance:**
+Provides an environment for testing prompt injection attacks and defenses in tool-using LLM agents.
+
+**Paper:**
+https://arxiv.org/abs/2406.13352
+
+---
+
+## 17. Sycophancy to Subterfuge: Investigating Reward-Tampering in Language Models
+
+**Authors:** Anthropic researchers
+
+**Year:** 2024
+
+**Relevance:**
+Investigates whether models can generalize from simple specification gaming to more serious reward-tampering behaviors. Reward tampering is highly relevant to objective misinterpretation.
+
+**Research:**
+https://www.anthropic.com/research/reward-tampering
+
+---
+
+## 18. Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds
+
+**Authors:** Ömer Veysel Çağatan, Xuandong Zhao
+
+**Year:** 2026
+
+**Relevance:**
+Investigates reward hacking in language-model agents using environments inspired by AI Safety Gridworlds. The work is directly related to proxy objectives and specification gaming in language-based agents.
+
+**Paper:**
+https://arxiv.org/abs/2606.15385
+
+---
+
+## 19. On the Generalization of Representations in Reinforcement Learning
+
+**Authors:** Charline Le Lan, Stephen Tu, Adam Oberman, Rishabh Agarwal, Marc G. Bellemare
+
+**Year:** 2022
+
+**Venue:** AISTATS 2022
+
+**Relevance:**
+Studies how learned representations generalize to new states. Understanding generalization is important for analyzing why an agent can behave correctly during training but incorrectly in deployment.
+
+**Paper:**
+https://proceedings.mlr.press/v151/le-lan22a.html
+
+---
+
+## 20. Bisimulation Makes Analogies in Goal-Conditioned Reinforcement Learning
+
+**Authors:** Philippe Hansen-Estruch, Amy Zhang, Ashvin Nair, Patrick Yin, Sergey Levine
+
+**Year:** 2022
+
+**Venue:** ICML 2022
+
+**Relevance:**
+Studies how agents can infer and generalize goals across different environments. This provides useful background for reliable goal interpretation and generalization.
+
+**Paper:**
+https://proceedings.mlr.press/v162/hansen-estruch22a.html
+
+---
+
+# Core References for This Project
+
+The following papers are particularly important for the topic **Safety and Rollback Mechanisms for Objective Misinterpretation in Agentic AI Systems**:
+
+1. **Concrete Problems in AI Safety** — foundations of AI safety and safe exploration.
+2. **The Off-Switch Game** — human intervention and safe shutdown.
+3. **Risks from Learned Optimization** — internal objectives and alignment risks.
+4. **AI Safety Gridworlds** — reward hacking and safety failures.
+5. **Goal Misgeneralization in Deep Reinforcement Learning** — unintended goal pursuit.
+6. **ToolEmu** — risks associated with agent tool use.
+7. **InjecAgent** — indirect prompt injection in tool-using agents.
+8. **AgentDojo** — evaluation of prompt injection attacks and defenses.
+9. **Agent-SafetyBench** — systematic safety evaluation of LLM agents.
+10. **AgentHarm** — harmful behavior in autonomous agents.
+11. **Sleeper Agents** — deceptive behavior that can persist through safety training.
+12. **Sycophancy to Subterfuge** — reward tampering and specification gaming.
+13. **Reward Hacking in Language Model Agents** — reward hacking in language-based agents.
+
+---
+
+# Citation Usage
+
+These references should be used as supporting sources for the research paper in the `paper/` directory.
+
+When citing a paper in the research paper, the citation should correspond to the actual claim being made. For example:
+
+> Goal misgeneralization occurs when an agent retains its capabilities while pursuing an unintended goal outside the training distribution. [1]
+
+The corresponding reference should identify the original paper and provide its official publication link.
+
+All research claims should be checked against the original source before final submission.
